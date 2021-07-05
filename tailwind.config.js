@@ -1,23 +1,25 @@
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  mode: "jit",
+  purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       sans: ["Poppins", "sans-serif"],
     },
     extend: {
-      fontWeight: {
-        "fw-extra-bold": 800,
-        "fw-bold": 700,
-        "fw-semi-bold": 600,
-        "fw-regular": 400,
-      },
       height: {
         "fit-content": "fit-content",
+      },
+      width: {
+        "side-nav": "276px",
+        "content-field": "calc(100vw - 276px)",
       },
       zIndex: {
         100: 100,
         "-1": -1,
+      },
+      padding: {
+        15: "60px",
       },
       colors: {
         black: {
@@ -28,6 +30,7 @@ module.exports = {
           400: "#AFAFAF",
           300: "#E2E2E2",
           200: "#EEEEEE",
+          100: "#f7f7f7",
         },
         yellow: {
           800: "#674D1B",
