@@ -1,14 +1,10 @@
 import * as React from "react";
 import Image from "next/image";
 import bgLogin from "../../../../public/img/bg-login.png";
-import logo from "../../../../public/img/Logo.svg";
 import TextInput from "../../molecules/FormInput/TextInput";
 import Button from "../../molecules/Button/Button";
-import { useRouter } from "next/router";
 
 const LoginScreen: React.FC = () => {
-  const router = useRouter();
-
   const onLogin = () => {
     localStorage.setItem("isLoggedIn", "true");
 

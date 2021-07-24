@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const NavigationTop = () => {
+const NavigationTop: React.FC = () => {
   const [isShow, setShow] = React.useState<boolean>(false);
 
   const onShow = () => {

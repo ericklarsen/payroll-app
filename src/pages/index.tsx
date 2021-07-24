@@ -1,9 +1,8 @@
 import * as React from "react";
-import { useQuery } from "react-query";
 import LoginScreen from "../components/organisms/LoginScreen/LoginScreen";
 import LoaderScreen from "../components/molecules/LoaderScreen/LoaderScreen";
 
-const index = ({ tes }) => {
+const Index: React.FC = () => {
   // const { isLoading, isError, data } = useQuery("user", () =>
   //   fetch("http://localhost:8080/cirestserver/api/department").then((res) => res.json())
   // );
@@ -18,7 +17,7 @@ const index = ({ tes }) => {
     if (isLoggedIn === "true") {
       window.location.href = "/dashboard";
     } else {
-      localStorage.setItem("isLoggedIn", "false")
+      localStorage.setItem("isLoggedIn", "false");
       setIsLoading(false);
     }
   }, []);
@@ -28,4 +27,4 @@ const index = ({ tes }) => {
   return <LoginScreen />;
 };
 
-export default index;
+export default Index;

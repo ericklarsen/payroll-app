@@ -3,7 +3,7 @@ import * as React from "react";
 interface Props {
   day: string;
   disable: boolean;
-  onDate: Function;
+  onDate: (day?: string) => void;
 }
 
 const DayBox: React.FC<Props> = ({ day, disable, onDate }) => (

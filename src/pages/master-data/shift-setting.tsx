@@ -1,7 +1,7 @@
 import * as React from "react";
 import LayoutRoot from "../../components/layouts/LayoutRoot/LayoutRoot";
 
-const shiftSetting = () => {
+const shiftSetting: React.FC = () => {
   return <LayoutRoot> shiftSetting</LayoutRoot>;
 };
 

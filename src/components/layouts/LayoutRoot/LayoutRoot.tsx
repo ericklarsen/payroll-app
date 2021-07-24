@@ -1,7 +1,5 @@
 import * as React from "react";
 import Navigation from "../../molecules/Navigation/Navigation";
-import UseRedirectWhenUserAlreadyLoggedin from "../../../hooks/UseRedirectWhenUserAlreadyLoggedin";
-import { UseIsLoggedIn } from "../../../hooks/UseIsLoggedIn";
 import ContentArea from "./ContentArea";
 import NavigationTop from "../../molecules/NavigationTop/NavigationTop";
 

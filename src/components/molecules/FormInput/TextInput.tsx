@@ -28,9 +28,8 @@ const TextInput: React.FC<Props> = ({ type, label, placeholder, reverse, icon, c
           type={type || "text"}
           placeholder={placeholder}
           className="w-full px-4 py-3 text-body2 text-black-800 font-normal placeholder-black-400 outline-none"
-          // onFocus={(e) => console.log(e)}
-          onBlur={(e) => setBorder(false)}
-          onFocusCapture={(e) => setBorder(true)}
+          onBlur={() => setBorder(false)}
+          onFocusCapture={() => setBorder(true)}
         />
       </div>
     </div>

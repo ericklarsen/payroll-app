@@ -19,7 +19,7 @@ interface subMenuState {
   url: string;
 }
 
-const NavItemMobile: React.FC<Props> = ({ data, index, hideDivider }) => {
+const NavItemMobile: React.FC<Props> = ({ data, index }) => {
   const [isShow, setShow] = React.useState<boolean>(false);
   const ref = React.useRef(null);
 
@@ -43,9 +43,7 @@ const NavItemMobile: React.FC<Props> = ({ data, index, hideDivider }) => {
 
       <div className="hidden h-1 w-8 bg-yellow-500 rounded-full absolute bottom-[-10px]"></div>
 
-      {data.subMenu.length > 1 && (
-        <NavSubItemMobile data={data} index={index} isShow={isShow} onShow={setShow} />
-      )}
+      {data.subMenu.length > 1 && <NavSubItemMobile data={data} index={index} isShow={isShow} />}
     </div>
   );
 };

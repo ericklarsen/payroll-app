@@ -2,7 +2,7 @@ import * as React from "react";
 import Image from "next/image";
 import bigLogo from "../../../../public/img/bigLogo.svg";
 
-const LoaderScreen = () => {
+const LoaderScreen: React.FC = () => {
   return (
     <div className="fixed w-screen h-screen z-100 bg-white flex items-center justify-center">
       <div className="transform animate-bounce">

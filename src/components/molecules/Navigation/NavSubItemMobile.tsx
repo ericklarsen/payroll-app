@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useClickOutside } from "../../../hooks/UseClickOutside";
 
 interface Props {
   isShow: boolean;
@@ -11,7 +10,6 @@ interface Props {
     mainMenu: string;
     subMenu: Array<subMenuState>;
   };
-  onShow: Function;
 }
 
 interface subMenuState {
@@ -19,7 +17,7 @@ interface subMenuState {
   url: string;
 }
 
-const NavSubItemMobile: React.FC<Props> = ({ isShow, onShow, data, index }) => {
+const NavSubItemMobile: React.FC<Props> = ({ isShow, data, index }) => {
   return (
     <div
       className={`${!isShow && "hidden"} ${

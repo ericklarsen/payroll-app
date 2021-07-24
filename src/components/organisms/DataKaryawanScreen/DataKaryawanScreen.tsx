@@ -14,7 +14,7 @@ import TableItemWrapper from "../../molecules/Table/TableItemWrapper";
 import TitleBar from "../../molecules/TitleBar/TitleBar";
 
 const DataKaryawanScreen: React.FunctionComponent = () => {
-  const { isLoading, isError, data } = useQuery("user", () =>
+  const { isLoading } = useQuery("user", () =>
     fetch("https://berita-indo-api.vercel.app/").then((res) => res.json())
   );
   const [isShow, setShow] = React.useState<boolean>(false);
@@ -58,7 +58,7 @@ const DataKaryawanScreen: React.FunctionComponent = () => {
       <Table>
         {/* tab */}
         <div className="w-full flex items-center justify-between">
-          <div className="flex w-full border-b border-black-300">
+          <div className="flex w-full border-b border-black-300 ">
             <div className="px-6 py-2 text-body2 font-semibold text-black-800 bg-yellow-500 rounded-t-md cursor-pointer">
               List Karyawan
             </div>
@@ -83,7 +83,7 @@ const DataKaryawanScreen: React.FunctionComponent = () => {
 
         {/* table content */}
         {[...Array(10).keys()].map((i) => (
-          <TableItemWrapper>
+          <TableItemWrapper key={i}>
             <TableItemText width={40} text="001" />
             <TableItemText width={160} text="Erick Larsen" />
             <TableItemText width={140} text="Programmer" />
@@ -91,7 +91,7 @@ const DataKaryawanScreen: React.FunctionComponent = () => {
             <TableItemText width={120} text="Laki-laki" />
             <TableItemText width={100} text="Buddha" />
             <TableItemText width={140} text="085264944705" />
-            <MoreIcon onClick={onShow} />
+            <MoreIcon onShow={onShow} />
             <MoreMenu isShow={isShow} />
           </TableItemWrapper>
         ))}

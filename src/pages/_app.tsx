@@ -1,33 +1,18 @@
 import "../styles/globals.scss";
 import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
-import { QueryClient, QueryClientProvider } from "react-query";  
-import NextNProgress from 'nextjs-progressbar';
-
-import LayoutRoot from "../components/layouts/LayoutRoot/LayoutRoot";
-import ContentArea from "../components/layouts/LayoutRoot/ContentArea";
+import { QueryClient, QueryClientProvider } from "react-query";
+import NextNProgress from "nextjs-progressbar";
 
 const queryClient = new QueryClient();
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <NextNProgress height={5} color="#f3ad22" />
       <Component {...pageProps} />
     </QueryClientProvider>
   );
-}
-
-// Only uncomment this method if you have blocking data requirements for
-// every single page in your application. This disables the ability to
-// perform automatic static optimization, causing every page in your app to
-// be server-side rendered.
-//
-// MyApp.getInitialProps = async (appContext: AppContext) => {
-//   // calls page's `getInitialProps` and fills `appProps.pageProps`
-//   const appProps = await App.getInitialProps(appContext);
-
-//   return { ...appProps }
-// }
+};
 
 export default MyApp;

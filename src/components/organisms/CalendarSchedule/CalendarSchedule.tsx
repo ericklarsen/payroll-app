@@ -2,7 +2,7 @@ import * as React from "react";
 import TitleBar from "../../molecules/TitleBar/TitleBar";
 import DayBoxWrapper from "./DayBoxWrapper";
 import DayBox from "./DayBox";
-import WeekDayBox from "./WeekdayBox";
+import WeekDayBox from "./WeekDayBox";
 import WeekDayBoxWrapper from "./WeekDayBoxWrapper";
 
 const CalendarSchedule: React.FC = () => {
@@ -30,9 +30,9 @@ const CalendarSchedule: React.FC = () => {
   React.useEffect(() => {
     date.setDate(1);
 
-    let day = [];
-    let prevDay = [];
-    let nextDay = [];
+    const day = [];
+    const prevDay = [];
+    const nextDay = [];
 
     const firstDayIndex = date.getDay();
     const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();

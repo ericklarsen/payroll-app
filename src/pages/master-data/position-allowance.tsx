@@ -1,7 +1,7 @@
 import * as React from "react";
 import LayoutRoot from "../../components/layouts/LayoutRoot/LayoutRoot";
 
-const positionAllowance = () => {
+const positionAllowance: React.FC = () => {
   return <LayoutRoot> positionAllowance</LayoutRoot>;
 };
 
