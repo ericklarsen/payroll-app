@@ -1,4 +1,6 @@
-import React, { RefObject, useEffect } from "react";
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/ban-types */
+import { RefObject, useEffect } from "react";
 
 export const useClickOutside = (ref: RefObject<HTMLElement>, callback: Function) => {
   const handleClick = (e: MouseEvent) => {

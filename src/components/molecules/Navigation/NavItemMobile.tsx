@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useClickOutside } from "../../../hooks/UseClickOutside";
+import { useClickOutside } from "../../../hooks/clickOutside";
 import NavSubItemMobile from "./NavSubItemMobile";
 
 interface Props {
