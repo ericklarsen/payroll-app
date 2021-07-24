@@ -7,11 +7,19 @@ interface Props {
   reverse?: boolean;
   icon?: string;
   className?: string;
+  onChange?: (e: string) => void;
 }
 
-const TextInput: React.FC<Props> = ({ type, label, placeholder, reverse, icon, className }) => {
+const TextInput: React.FC<Props> = ({
+  type,
+  label,
+  placeholder,
+  reverse,
+  icon,
+  className,
+  onChange,
+}) => {
   const [isBorder, setBorder] = React.useState<boolean>(false);
-  console.log(isBorder);
   return (
     <div className={`w-full first:mt-0 mt-6 ${className}`}>
       {label && <p className="text-caption1 font-semibold text-black-600 mb-2">{label}</p>}
@@ -30,6 +38,7 @@ const TextInput: React.FC<Props> = ({ type, label, placeholder, reverse, icon, c
           className="w-full px-4 py-3 text-body2 text-black-800 font-normal placeholder-black-400 outline-none"
           onBlur={() => setBorder(false)}
           onFocusCapture={() => setBorder(true)}
+          onChange={(e) => onChange(e.target.value)}
         />
       </div>
     </div>
