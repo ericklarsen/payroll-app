@@ -1,3 +1,4 @@
+import axios from "axios";
 import * as React from "react";
 import { useQuery } from "react-query";
 import Button from "../../molecules/Button/Button";
@@ -14,8 +15,8 @@ import TableItemWrapper from "../../molecules/Table/TableItemWrapper";
 import TitleBar from "../../molecules/TitleBar/TitleBar";
 
 const DataKaryawanScreen: React.FunctionComponent = () => {
-  const { isLoading } = useQuery("user", () =>
-    fetch("https://berita-indo-api.vercel.app/").then((res) => res.json())
+  const { isLoading, data } = useQuery("user", () =>
+    axios("https://berita-indo-api.vercel.app/").then((res) => res.data)
   );
   const [isShow, setShow] = React.useState<boolean>(false);
   const [isShowModal, setShowModal] = React.useState<boolean>(false);
