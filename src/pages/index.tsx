@@ -18,6 +18,7 @@ const index = ({ tes }) => {
     if (isLoggedIn === "true") {
       window.location.href = "/dashboard";
     } else {
+      localStorage.setItem("isLoggedIn", "false")
       setIsLoading(false);
     }
   }, []);

@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import LayoutRoot from "../../components/layouts/LayoutRoot/LayoutRoot";
 import DataKaryawanScreen from "../../components/organisms/DataKaryawanScreen/DataKaryawanScreen";
 
 const dataKaryawan = () => {
@@ -10,7 +11,11 @@ const dataKaryawan = () => {
   // if (isLoading) return "is loading ...";
   // console.log(data);
 
-  return <DataKaryawanScreen />;
+  return (
+    <LayoutRoot>
+      <DataKaryawanScreen />
+    </LayoutRoot>
+  );
 };
 
 export default dataKaryawan;
