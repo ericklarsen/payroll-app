@@ -3,10 +3,56 @@ module.exports = {
   purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      lg: "1025px",
+    },
     fontFamily: {
       sans: ["Poppins", "sans-serif"],
     },
     extend: {
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "fade-out": {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+        loading: {
+          "0%": { "background-color": "#434343" },
+          "50%": { "background-color": "#353535" },
+          "100%": { "background-color": "#434343" },
+        },
+        "bottomsheet-in": {
+          "0%": { transform: "translateY(200%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+        "bottomsheet-out": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(200%)" },
+        },
+      },
+      animation: {
+        "fade-in": "fade-in 350ms ease-in-out",
+        "fade-out": "fade-out 550ms ease-in-out",
+        loading: "loading 1s infinite",
+        "bottomsheet-in": "bottomsheet-in 0.55s cubic-bezier(0.85,0.01,0.25,1)",
+        "bottomsheet-out": "bottomsheet-out 0.55s cubic-bezier(0.85,0.01,0.25,1)",
+        "spin-slow": "spin 6s linear infinite",
+      },
+      fontSize: {
+        h1: "60px",
+        h2: "40px",
+        h3: "34px",
+        h4: "28px",
+        h5: "24px",
+        h6: "18px",
+        body1: "16px",
+        body2: "14px",
+        caption1: "12px",
+        caption2: "10px",
+      },
       height: {
         "fit-content": "fit-content",
       },
@@ -63,7 +109,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ["even"],
+    },
   },
   plugins: [],
 };
