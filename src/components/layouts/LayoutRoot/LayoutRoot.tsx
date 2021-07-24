@@ -6,12 +6,10 @@ import ContentArea from "./ContentArea";
 import NavigationTop from "../../molecules/NavigationTop/NavigationTop";
 
 const LayoutRoot: React.FC = ({ children }) => {
-  const isLoggedIn = UseIsLoggedIn();
-  UseRedirectWhenUserAlreadyLoggedin();
-
   return (
-    <div className="w-full overflow-x-hidden inline-flex">
-      {isLoggedIn && <Navigation />}
+    <div className="w-full overflow-x-hidden lg:inline-flex">
+      {/* Don't wrap navigation with logic state, it will re-rendering the component */}
+      <Navigation />
       <ContentArea>
         <NavigationTop />
         {children}
