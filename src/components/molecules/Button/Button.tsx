@@ -28,7 +28,7 @@ const Button: React.FC<Props> = ({
     } flex items-center justify-center ${className}`}
     onClick={!isLoading ? onClick : () => {}}
   >
-    {!isLoading ? text : <Spinner className="w-6 h-6" />}
+    {!isLoading ? text : <Spinner />}
   </button>
 );
 
