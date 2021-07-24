@@ -1,7 +1,8 @@
 import "../styles/globals.scss";
 import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";  
+import NextNProgress from 'nextjs-progressbar';
 
 import LayoutRoot from "../components/layouts/LayoutRoot/LayoutRoot";
 import ContentArea from "../components/layouts/LayoutRoot/ContentArea";
@@ -11,6 +12,7 @@ const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
+      <NextNProgress height={5} color="#f3ad22" />
       <Component {...pageProps} />
     </QueryClientProvider>
   );
