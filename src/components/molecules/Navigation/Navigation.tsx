@@ -179,25 +179,6 @@ const Navigation: React.FC = () => {
             )}
           </React.Fragment>
         ))}
-        {/* <div className="flex flex-col items-center mr-[18px] last:mr-0 relative">
-          <div className="absolute top-[-12px] flex">
-            {[...Array(3).keys()].map((i) => (
-              <div key={i} className="h-1 w-1 bg-yellow-500 rounded-full mr-[2px] last:mr-0"></div>
-            ))}
-          </div>
-          <img src="/img/dashboard_icon.svg" className="w-[22px]" />
-          <div className="h-1 w-8 bg-yellow-500 rounded-full absolute bottom-[-10px]"></div>
-
-          <div
-            className="w-[160px] absolute top-[-144px] max-h-[124px] overflow-y-auto bg-white left-0 border-l-4 border-yellow-500"
-            style={{ boxShadow: "0px 2px 15px rgba(0, 0, 0, 0.1)" }}
-          >
-            <div className="w-full py-[6px] px-[14px] text-caption1 border-b border-black-300 last:border-b-0 active:bg-black-200">
-              Menu A
-            </div>
-          </div>
-        </div>
-        <div className="h-7 w-[1px] bg-black-200 mr-[18px] last:mr-0"></div> */}
       </div>
     </>
   );

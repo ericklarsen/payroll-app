@@ -5,7 +5,7 @@ interface Props {
 }
 
 const TableHeaderWrapper: React.FC<Props> = ({ children }) => (
-  <div className="w-full flex px-6">{children}</div>
+  <div className="w-full min-w-[1040px] flex px-6">{children}</div>
 );
 
 export default TableHeaderWrapper;

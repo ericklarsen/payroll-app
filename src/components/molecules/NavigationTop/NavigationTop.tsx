@@ -21,7 +21,7 @@ const NavigationTop: React.FC = () => {
   });
 
   return (
-    <div className="fixed z-100 left-0 shadow-md lg:shadow-none top-0 p-5 lg:p-0 lg:relative w-full flex items-center justify-between mb-16 bg-white">
+    <div className="fixed z-100 left-0 shadow-md lg:shadow-none top-0 p-5 py-6 lg:p-0 lg:relative w-full flex items-center justify-between mb-16 bg-white">
       <div className="hidden lg:flex items-center">
         <img src="/img/date_icon.svg" alt="date" />
         <h6 className="ml-4">
@@ -74,14 +74,14 @@ const NavigationTop: React.FC = () => {
         </div>
 
         <div
-          className={`w-[150px] lg:w-[180px] absolute bg-white border border-black-400 rounded-xl right-0 top-10 lg:top-16 overflow-hidden transition-all shadow-md ${
+          className={`w-[150px] lg:w-[180px] absolute bg-white border border-black-300 rounded-xl right-0 top-10 lg:top-16 overflow-hidden transition-all shadow-md ${
             !isShow ? "-translate-y-4 opacity-0 pointer-events-none" : "-translate-y-0 opacity-100"
           }`}
         >
-          <div className="w-full p-2.5 lg:p-3.5 cursor-pointer hover:bg-yellow-400 border-b border-black-400">
+          <div className="w-full p-2.5 lg:p-3.5 cursor-pointer hover:bg-yellow-400 border-b border-black-300">
             <p className="text-caption1 lg:text-body2 text-black-800">Change password</p>
           </div>
-          <div className="w-full p-2.5 lg:p-3.5 cursor-pointer hover:bg-yellow-400 border-b border-black-400">
+          <div className="w-full p-2.5 lg:p-3.5 cursor-pointer hover:bg-yellow-400 border-b border-black-300">
             <p className="text-caption1 lg:text-body2 text-black-800">Add new user</p>
           </div>
           <div

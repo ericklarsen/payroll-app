@@ -10,6 +10,7 @@ interface Props {
     mainMenu: string;
     subMenu: Array<subMenuState>;
   };
+  onHref: (url: string, callback?: () => void) => void;
 }
 
 interface subMenuState {
@@ -17,7 +18,7 @@ interface subMenuState {
   url: string;
 }
 
-const NavSubItemMobile: React.FC<Props> = ({ isShow, data, index }) => {
+const NavSubItemMobile: React.FC<Props> = ({ isShow, data, index, onHref }) => {
   return (
     <div
       className={`${
@@ -36,6 +37,7 @@ const NavSubItemMobile: React.FC<Props> = ({ isShow, data, index }) => {
         {data.subMenu.map((item, i) => (
           <div
             key={i}
+            onClick={() => onHref(item.url)}
             className={`w-full py-[10px] px-[14px] text-caption1 border-b border-black-300 last:border-b-0 active:bg-black-200 ${
               index > 3 && "text-right"
             }`}
