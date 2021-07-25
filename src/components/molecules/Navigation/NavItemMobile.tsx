@@ -21,18 +21,18 @@ interface subMenuState {
 
 const NavItemMobile: React.FC<Props> = ({ data, index }) => {
   const [isShow, setShow] = React.useState<boolean>(false);
-  const ref = React.useRef(null);
+  const menuRef = React.useRef(null);
 
   const onShow = () => {
     setShow(!isShow);
   };
 
-  useClickOutside(ref, () => {
+  useClickOutside(menuRef, () => {
     setShow(false);
   });
 
   return (
-    <div ref={ref} className="flex flex-col items-center mr-[18px] last:mr-0 relative">
+    <div ref={menuRef} className="flex flex-col items-center mr-[18px] last:mr-0 relative">
       <div className="absolute top-[-12px] flex">
         {data.subMenu.length > 1 &&
           [...Array(3).keys()].map((i) => (
