@@ -7,33 +7,51 @@ import { sendRequest } from "../../../helpers/apiRequest";
 import Modal from "../../molecules/Modal/Modal";
 
 const LoginScreen: React.FC = () => {
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [isLoading, setLoading] = React.useState(false);
-  const [isError, setError] = React.useState(false);
+  const [username, setUsername] = React.useState<string>("");
+  const [password, setPassword] = React.useState<string>("");
+  const [isLoading, setLoading] = React.useState<boolean>(false);
+  const [isError, setError] = React.useState<boolean>(false);
+
+  const unameRef = React.useRef<HTMLInputElement>();
+  const passRef = React.useRef<HTMLInputElement>();
 
   const onLogin = async () => {
-    setLoading(true);
+    if (!username) {
+      unameRef.current.focus();
+      return;
+    }
 
-    const formData = new FormData();
-    formData.append("username", username);
-    formData.append("password", password);
+    if (!password) {
+      passRef.current.focus();
+      return;
+    }
 
-    await sendRequest({
-      link: "https://api.payroll-acien.online/C_t_login_user/login",
-      formData,
-    })
-      .then((res) => {
-        setLoading(false);
-        localStorage.setItem("isLoggedIn", "true");
-        localStorage.setItem("userData", JSON.stringify(res.data.data));
-        window.location.href = "/dashboard";
-      })
-      .catch(() => {
-        setLoading(false);
-        setError(true);
-      });
+    localStorage.setItem("isLoggedIn", "true");
+    window.location.href = "/dashboard";
+
+    // setLoading(true);
+    // const formData = new FormData();
+    // formData.append("username", username);
+    // formData.append("password", password);
+
+    // await sendRequest({
+    //   link: "https://api.payroll-acien.online/C_t_login_user/login",
+    //   formData,
+    // })
+    //   .then((res) => {
+    //     setLoading(false);
+    //     localStorage.setItem("userData", JSON.stringify(res.data.data));
+    //     window.location.href = "/dashboard";
+    //   })
+    //   .catch(() => {
+    //     setLoading(false);
+    //     setError(true);
+    //   });
   };
+
+  React.useEffect(() => {
+    console.log(unameRef);
+  }, []);
 
   return (
     <>
@@ -47,12 +65,13 @@ const LoginScreen: React.FC = () => {
         <div className="hidden h-full relative lg:block lg:w-1/2">
           <Image src={bgLogin} layout="fill" className="w-full h-full object-cover" />
         </div>
-        <div className="w-full h-full bg-white flex flex-col items-center justify-between p-8 box-border lg:py-10 lg:px-20 lg:w-1/2 ">
+        <div className="w-full h-full bg-white flex flex-col items-center justify-between px-5 py-8 box-border lg:py-10 lg:px-20 lg:w-1/2 ">
           <div></div>
           <div className="w-full flex flex-col items-center">
             <img src="/img/Logo.svg" className="w-[140px] object-contain" />
 
             <TextInput
+              ref={unameRef}
               label=""
               placeholder="Username"
               icon="/img/person-icon.svg"
@@ -60,6 +79,7 @@ const LoginScreen: React.FC = () => {
               onChange={(value) => setUsername(value)}
             />
             <TextInput
+              ref={passRef}
               type="password"
               label=""
               placeholder="Password"
@@ -77,7 +97,7 @@ const LoginScreen: React.FC = () => {
             />
           </div>
           <p className="text-caption1 font-normal tracking-widest text-black-400 text-center">
-            {`Made with ❤️ Collaboration From Acien.id & Larsen.dev - 2021`}
+            {`Made with ❤️ Great App From Larsen.dev - ${new Date().getFullYear()}`}
           </p>
         </div>
       </div>
