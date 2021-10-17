@@ -10,13 +10,13 @@ interface Props {
 
 const Modal: React.FC<Props> = ({ title, width, show, children, onShow }) => (
   <>
+    {console.log(show)}
     <div
       className={`${
-        show ? "" : "hidden"
+        show ? "" : "lg:hidden"
       } animate-fade-in fixed w-screen h-screen top-0 left-0 z-100 hidden lg:flex items-center justify-center`}
     >
       <div className="fixed w-screen h-screen bg-black-800 opacity-50"></div>
-
       <div
         className={`${
           width ? width : "w-[620px]"
@@ -41,7 +41,9 @@ const Modal: React.FC<Props> = ({ title, width, show, children, onShow }) => (
         className={`animate-bottomsheet-in w-full max-w-[440px] absolute bottom-0 bg-white shadow-md rounded-2xl rounded-b-none z-10`}
       >
         <div className="w-full px-5 lg:px-6 py-3 lg:py-5 flex justify-between items-center border-b border-black-300">
-          <p className="text-body2 lg:text-body1 font-bold text-black-800">{title || "Form Pendaftaran"}</p>
+          <p className="text-body2 lg:text-body1 font-bold text-black-800">
+            {title || "Form Pendaftaran"}
+          </p>
           <img
             src="/img/close.svg"
             alt="close"
